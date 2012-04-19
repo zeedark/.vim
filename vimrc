@@ -1,24 +1,22 @@
-set nocompatible
+" set nocompatible
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-colorscheme desert
-" set nowrap
-" set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-
 set laststatus=2
 
-"set statusline=
-"set statusline+=%n\ %f\ %2*%m\ %1*%h
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"set statusline+=%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}]\ %12.(%c:%l/%L%)
+set statusline=
+set statusline+=%n\ %f\ %2*%m\ %1*%h
+set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+set statusline+=%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}]\ %12.(%c:%l/%L%)
 
 " No menu or toolbar
 set guioptions=egr
 
+set nowrap
 set tabstop=2
+" set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set autoindent
 set shiftwidth=2
 set ruler
@@ -26,7 +24,7 @@ set number
 set guifont=Monaco:h12
 set noexpandtab
 set list
-set spell
+"set spell
 set linespace=1
 set visualbell
 set nobackup
@@ -45,13 +43,8 @@ endif
 
 " Colors
 syntax enable
-if has('gui_running')
-    set background=dark
-else
-    set background=dark
-endif
+colorscheme desert
 set background=dark
-"colorscheme twilight
 
 filetype plugin on
 
@@ -140,7 +133,6 @@ vmap <c-j> xkP`[V`]
 vmap <c-k> xp`[V`]
 
 " Highlight tailing whitespace
-
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
